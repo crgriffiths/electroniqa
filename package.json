@@ -1,0 +1,18 @@
+{
+  "name": "ElectroniQA",
+  "version": "1.0.0",
+  "description": "A minimal QA tasklist generator for GitHub Issues",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "https://github.com/efellegriff/electroniqa.git",
+  "keywords": [
+    "Electron"
+  ],
+  "author": "Matt Pantoja",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "~1.8.2"
+  }
+}
