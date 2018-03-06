@@ -1,15 +1,31 @@
-const electron = require('electron')
+const {app, BrowserWindow, Menu} = require('electron')
 // Module to control application life.
-const app = electron.app
+//const app = electron.app
 // Module to create native browser window.
-const BrowserWindow = electron.BrowserWindow
+//const BrowserWindow = electron.BrowserWindow
 
 const path = require('path')
 const url = require('url')
-
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
+
+const template = [{
+      label: "App",
+      submenu: [
+          { label: "Quit", accelerator: "Command+Q", click: function() { app.quit(); }}
+      ]}, {
+      label: "Edit",
+      submenu: [
+        {role: 'undo'},
+        {role: 'redo'},
+        {type: 'separator'},
+        {role: 'cut'},
+        {role: 'copy'},
+        {role: 'paste'},
+        {role: 'selectall'}
+      ]}
+  ];
 
 function createWindow () {
   // Create the browser window.
@@ -21,7 +37,6 @@ function createWindow () {
     protocol: 'file:',
     slashes: true
   }))
-
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()
 
@@ -58,3 +73,7 @@ app.on('activate', function () {
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
+app.on('ready', function() {
+  const menu = Menu.buildFromTemplate(template)
+  Menu.setApplicationMenu(menu)
+})

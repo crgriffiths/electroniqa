@@ -1,4 +1,10 @@
-body {  font-family: Helvetica }
+body {  font-family: Helvetica; 
+	background-image: url('../assets/body-bg.png');
+	background-repeat: repeat-y;
+	background-size: 100% auto;
+	color: #333;
+
+}
 
 * { box-sizing: border-box }
 
@@ -20,8 +26,8 @@ ul, li {
 li { margin-bottom: 1rem }
 
 button {
-	background-color: darkgray;
-	border: 2px solid darkgray;
+	background-color: #f55024;
+	border: 2px solid #f55024;
 	color: white;
 	font-weight: bold;
 	letter-spacing: 1px;
@@ -35,7 +41,7 @@ button:hover,
 button:focus,
 button:active {
 	background-color: white;
-	color: darkgray;
+	color: #f55024;
 }
 
 /* Layout/Content */
@@ -52,8 +58,8 @@ label {
 }
 
 textarea {
-	border: 2px solid lightgray;
-	border-radius: 5px;
+	border: none;
+	border-radius: 0;
 	display: block;
 	font-size: 1.25rem;
 	margin: 0 auto 1rem;
@@ -65,12 +71,12 @@ textarea {
 
 
 textarea:focus {
-	background-color: lightgray;
+	background-color: #f3d2b2;
 	outline: none;
 }
 
 #output-text-wrapper {
-	background-color: lightgray;
+	background-color: white;
 	border-radius: 5px;
 	margin-bottom: 1rem;
 	min-height: 200px;

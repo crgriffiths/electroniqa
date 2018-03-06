@@ -4,7 +4,8 @@
   "description": "A minimal QA tasklist generator for GitHub Issues",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=build/icon.icns --prune=true --out=release-builds"
   },
   "repository": "https://github.com/efellegriff/electroniqa.git",
   "keywords": [
