@@ -82,3 +82,6 @@ textarea:focus {
 	min-height: 200px;
 	padding: 1rem;
 }
+div#output-text {
+    white-space: pre;
+}
