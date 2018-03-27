@@ -24,7 +24,7 @@
                 <button id="remove-last">Remove Last Item</button>
                 <button id="remove-all">Remove All Items</button>
                 <div>
-                    <button id="select-all">Select All Contents</button>
+                    <button id="select-all">Copy All Contents</button>
                 </div>
             </div>
         </div>
@@ -36,12 +36,22 @@
             let removeLast = document.getElementById('remove-last');
             let removeAll = document.getElementById('remove-all');
             let selectAll = document.getElementById('select-all');
+            let copyContent = document.getElementById('copy-cnt');
             
             // Adding Item Function
             function addItem() {
-                if (checklistText.value !== '') {
-                    outputContainer.innerHTML += '<li>- [ ] ' + checklistText.value + '</li>';
-                    checklistText.value = '';
+                let text = checklistText.value;
+                if (text !== '') {
+                    if (text.indexOf('\n') > -1){
+                        let str = '\n';
+                        let regx = new RegExp(str, 'g');
+                        text = text.replace(regx, '</li><li>- [ ] ');
+                        outputContainer.innerHTML += '<li>- [ ] ' + text + '</li>';
+                        checklistText.value = ''; 
+                    } else {
+                        outputContainer.innerHTML += '<li>- [ ] ' + text + '</li>';
+                        checklistText.value = '';
+                    }
                 } else {
                     alert('Please add content.')
                 }
@@ -71,6 +81,7 @@
             // Select All Content
             selectAll.addEventListener('click', () => {
                 window.getSelection().selectAllChildren(outputContainer);
+                document.execCommand('copy',false,null);
             });
         </script>
     </body>
