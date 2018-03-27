@@ -83,5 +83,5 @@ textarea:focus {
 	padding: 1rem;
 }
 div#output-text {
-    white-space: pre;
+    white-space: pre-wrap;
 }
