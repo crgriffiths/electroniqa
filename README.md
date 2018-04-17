@@ -11,7 +11,7 @@ To clone and run this repository you'll need [Git](https://git-scm.com) and [Nod
 
 ```bash
 # Clone this repository
-git clone https://github.com/efellegriff/electroniqa.git
+git clone https://github.com/crgriffiths/electroniqa
 # Go into the repository
 cd electroniqa
 # Install dependencies
